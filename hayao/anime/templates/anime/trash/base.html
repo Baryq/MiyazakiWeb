@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<ul>
+    {% for n in nav %}
+    {% if n.text != title %}
+    <li><a href="{%url n.name%}">{{ n.text }}</a></li>
+    {% endif %}
+    {% endfor %}
+</ul>
+<hr>
+{% block content %}{% endblock %}
+
+{% if title != 'Контакты' %}
+<hr>
+<a href="{% url 'contacts' %}">Контакты</a>
+{% endif %}
+
+</body>
+</html>

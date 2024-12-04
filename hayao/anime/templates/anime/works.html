@@ -1,0 +1,26 @@
+{% extends 'anime/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section>
+    <header class="major">
+        <h2>Работы автора</h2>
+    </header>
+    <div class="posts">
+        {% for work in all_works %}
+        {% if work.link %}
+        <article>
+            <a href="{% url 'work_no' work.pk %}" class="image"><img src="{% static 'anime/images' %}/{{ work.pk|add:-1 }}.jpg" alt="" /></a>
+            <h3>{{ work.title }}</h3>
+            <p>{{ work.description }}</p>
+            <ul class="actions">
+                <li><a href="{% url 'work_no' work.pk %}" class="button">Читать больше</a></li>
+            </ul>
+        </article>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content %}

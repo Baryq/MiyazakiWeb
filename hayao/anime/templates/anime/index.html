@@ -1,0 +1,23 @@
+{% extends 'anime/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Banner -->
+	<section id="banner">
+		<div class="content">
+			<header>
+				<h1>Миядзаки, Хаяо</h1>
+				<p>Японский режиссёр-аниматор</p>
+			</header>
+			<p>Вместе с Исао Такахатой основал анимационную студию Studio Ghibli, на которой выпущено большинство его фильмов. Миядзаки чаще всего работал в жанрах фэнтези, детской сказки, стимпанка и магического реализма. Он снимал мультфильмы как для взрослых, так и для детей, отличающиеся яркой и детальной рисованной картинкой и частыми обращениями к японскому фольклору, нередко с антивоенным или экологическим подтекстом.</p>
+			<ul class="actions">
+				<li><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%8F%D0%B4%D0%B7%D0%B0%D0%BA%D0%B8,_%D0%A5%D0%B0%D1%8F%D0%BE" class="button large">Биография</a></li>
+				<li><a href="{% url 'works' %}" class="button large">Работы</a></li>
+			</ul>
+		</div>
+		<span class="image object">
+			<img src="{% static 'anime/images/face.jpg' %}" alt="" />
+		</span>
+	</section>
+{% endblock content %}

@@ -1,0 +1,61 @@
+{% extends 'anime/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% block work %}
+
+    <section>
+        <header class="main">
+            <h1>{{ work.title }}</h1>
+        </header>
+
+        <span class="image main"><img src="{% static 'anime/images' %}/{{ work.pk|add:-1 }}.jpg" alt="" /></span>
+
+        <hr class="major" />
+            <h2>{{ work.year }} год</h2>
+            <h3>{{ work.genre|capfirst }}</h3>
+            <p>{{ work.description }}</p>
+
+        <h3>Был ли Хаяо...</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Режиссером</th>
+                        <th>Сценаристом</th>
+                        <th>Продюсером</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        {% if work.director %}
+                        <td>{{ work.director }}</td>
+                        {% else %}
+                        <td>—</td>
+                        {% endif %}
+
+                        {% if work.screenwriter %}
+                        <td>{{ work.screenwriter }}</td>
+                        {% else %}
+                        <td>—</td>
+                        {% endif %}
+
+                        {% if work.producer %}
+                        <td>{{ work.producer }}</td>
+                        {% else %}
+                        <td>—</td>
+                        {% endif %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a href="{{ work.link }}" class="button primary fit">Читать ещё больше</a>
+    </section>
+
+    {% endblock work %}
+
+{% endblock content %}

@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Editorial by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'anime/assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<p class="logo"><strong>Барабошин Никита</strong> С23-703 </p>
+								</header>
+
+							{% block content %}
+
+
+
+							{% endblock content%}
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Меню</h2>
+									</header>
+									<ul>
+										<li><a href="{% url 'index' %}">Главная страница</a></li>
+										<li><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%8F%D0%B4%D0%B7%D0%B0%D0%BA%D0%B8,_%D0%A5%D0%B0%D1%8F%D0%BE">Биография</a></li>
+										<li><a href="{% url 'works' %}">Работы</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Контакты</h2>
+									</header>
+									<p>Работа Барабошина Никиты, группа С23-703</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope">n.baraboshin@gmail.com</li>
+										<li class="icon solid fa-phone">7 (937) 797-2793</li>
+										<li class="icon solid fa-home">НИЯУ МИФИ<br />
+										Каширское ш., 31, Москва</li>
+									</ul>
+								</section>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'anime/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'anime/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'anime/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'anime/assets/js/util.js' %}"></script>
+			<script src="{% static 'anime/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
